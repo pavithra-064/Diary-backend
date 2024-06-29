@@ -33,10 +33,11 @@ mongoose
     });
   })
   .catch((err) => console.log("Error Raised: ", err));
-  
-app.get("/",(req,res)=>{
-  return "Server is running"
-})
+
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
 
 app.use("/api/login", loginRouter);
 app.use("/api/user", authenticateToken, userRouter);
